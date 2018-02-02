@@ -1,5 +1,6 @@
-import {Component, Input} '@angular/core'
-
+import {Component, Input, Inject} from '@angular/core'
+import {MediaitemService} from './media-item-service'
+import {lookupListToken}  from './lookup-provider'
 
 @Component({
     selector: 'my-media-item-list',
@@ -8,12 +9,23 @@ import {Component, Input} '@angular/core'
       'app/media-item-list.component.css'
     ]
 })
-export class MediaItemListComponent {
+export class MediaItemListComponent  {
 
-  @Input() mediaItems;
+  mediaItems;
+  
+   constructor(
+     private mediaItemService: MediaitemService,
+     @Inject(lookupListToken) public lookupLists) {
+              console.log(this.lookupLists);
+     }
+  
+     ngOnInit() {
+         this.mediaItems = this.mediaItemService.get();
+     }
+     
 
   onMediaItemDelete(mediaItem) {
-        console.log(mediaItem);
+        this.mediaItemService.delete(mediaItem);
   }
 
 
