@@ -1,0 +1,7 @@
+<h1>Featured Movies</h1>
+
+<my-media-item
+    *ngFor="let item of favoriteMediaList"
+    [ngClass]="{'medium-movies': item.medium==='Movies', 'medium-series': item.medium==='Series'}"
+    [mediaItem]="item">
+</my-media-item>    

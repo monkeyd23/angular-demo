@@ -16,3 +16,22 @@ section > header > h1 {
 section > header .description {
   font-style: italic;
 }
+
+.nav-item{
+  display: inline-block;
+  padding: 10px;
+  background: #ffffff;
+}
+.nav-item.active{
+  background: #32435b;
+  border: 1px solid #ffffff;
+}
+
+.nav-item>a{
+  display: block;
+  text-decoration: none;
+}
+
+.nav-item.active>a{
+  color: #ffffff;
+}

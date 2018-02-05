@@ -1,4 +1,5 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core'
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'my-media-item',
@@ -8,6 +9,10 @@ import {Component, Input, Output, EventEmitter} from '@angular/core'
   ]
 })
 export class MediaItemComponent {
+
+    constructor(private router: Router){
+
+    }
 
     @Input() mediaItem;
     @Output() delete = new EventEmitter();
@@ -20,4 +25,10 @@ export class MediaItemComponent {
     onDelete() {
         this.delete.emit(this.mediaItem);
     }
+
+    onTitleClick(mediaDetails){
+         this.router.navigate(['/media-details', mediaDetails.id])
+        //this.router.navigate(['/movie-details', mediaDetails.id], {queryParams: {isFavorite: mediaDetails.isFavorite}, fragment: 'Loading'})
+    }
+
 }

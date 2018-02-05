@@ -1,0 +1,17 @@
+<h4>Media Details</h4>
+<hr/>
+
+<div class="media-details-container">
+  <div class="media-title">
+      Movie name : {{mediaItem.name}}
+  </div>
+  <div class="media-description">
+      Movie Description: The {{mediaItem.name }} is a {{mediaItem.medium}} ({{mediaItem.category}}). 
+  </div>
+</div>
+
+
+<a  routerLink="/media-details/2" 
+    [queryParams]='{isFavorite: mediaItem.isFavorite}' 
+    fragment="loading"
+    >Movie Details for The Small Tall (2)</a>

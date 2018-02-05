@@ -1,4 +1,5 @@
-<h2>{{ mediaItem.name | slice: 0: 10 }}</h2>
+<h2 (click)="onTitleClick(mediaItem)">{{ mediaItem.name | slice: 0: 10 }}</h2>
+<!-- <a [routerLink]="['/media-details', mediaItem.id]">{{ mediaItem.name | slice: 0: 10 }}</a> -->
 <template [ngIf]="mediaItem.watchedOn">
   <div>Watched on {{ mediaItem.watchedOn | date: 'shortDate' }}</div>
 </template>

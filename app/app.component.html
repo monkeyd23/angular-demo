@@ -3,5 +3,15 @@
       <h1>Media Watch List</h1>
       <p class="description">Keeping track of the media I want to watch.</p>
     </header>
-      <my-media-item-list></my-media-item-list>
+
+    <ul>
+      <li class="nav-item" routerLinkActive="active"><a routerLink="/home">Home</a></li>
+      <li class="nav-item" routerLinkActive="active"><a routerLink="/favorite-movies" [queryParams]="{isFavorite: 'true'}">Featured Movies</a></li>
+      <li class="nav-item" routerLinkActive="active"><a [routerLink]="['/add-movie']"> Add Movie to list </a></li>
+    </ul>
+
+    <!-- place where all the views will render -->
+    <router-outlet></router-outlet>
+      <!-- <my-media-details></my-media-details>
+      <my-home></my-home> -->
   </section>
