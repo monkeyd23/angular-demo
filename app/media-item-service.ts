@@ -11,6 +11,15 @@ export class MediaitemService {
         }
     }
 
+    add(mediaItem){
+      if(mediaItem){
+        mediaItem['id'] = this.mediaItems.length + 1;
+        mediaItem['watchedOn'] = (new Date(mediaItem['date'])).valueOf()
+        mediaItem['isFavorite'] = mediaItem['isFavorite'] === 'true' ? true: false;
+        this.mediaItems.push(mediaItem)
+      }
+    }
+
 
   mediaItems = [
     {

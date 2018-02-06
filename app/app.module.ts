@@ -1,5 +1,6 @@
 import {NgModule} from '@angular/core';
 import { BrowserModule } from "@angular/platform-browser";
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {AppComponent} from './app.component'
 
 import { RouterModule, Routes} from '@angular/router';
@@ -15,6 +16,7 @@ import {lookupLists, lookupListToken} from './lookup-provider'
 import { HomeComponent } from './home.component';
 import { FavoriteMoviesComponent } from './favorite-movies.component';
 import { MediaDetailsComponent } from './media-details.component';
+import { AddMediaComponent } from './add-media.component';
 
 import { AuthGuard }  from './auth-guard.service';
 
@@ -29,12 +31,17 @@ const appRoutes: Routes = [
     {
         path: 'media-details/:id', component: MediaDetailsComponent
     },
+    {
+        path: 'add-media', component: AddMediaComponent
+    },
     { path: '',   redirectTo: '/home', pathMatch: 'full' },
 ]
 
 @NgModule({
     imports: [
         BrowserModule,
+        FormsModule,
+        ReactiveFormsModule,
         RouterModule.forRoot(appRoutes)
     ],
     declarations: [
@@ -45,6 +52,7 @@ const appRoutes: Routes = [
         /* for routing purpose */
         HomeComponent,
         FavoriteMoviesComponent,
+        AddMediaComponent,
         
         FavoriteDirective,
         CategoryListPipe

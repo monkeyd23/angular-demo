@@ -4,10 +4,9 @@
 }
 section {
   width: 100%;
-  background-color: #32435b;
+  
 }
 section > header {
-  color: #ffffff;
   padding: 10px;
 }
 section > header > h1 {
