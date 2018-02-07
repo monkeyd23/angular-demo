@@ -27,7 +27,7 @@ export class MediaItemComponent {
     }
 
     onTitleClick(mediaDetails){
-         this.router.navigate(['/media-details', mediaDetails.id])
+         this.router.navigate(['/media-details', mediaDetails['fbKey']])
         //this.router.navigate(['/movie-details', mediaDetails.id], {queryParams: {isFavorite: mediaDetails.isFavorite}, fragment: 'Loading'})
     }
 

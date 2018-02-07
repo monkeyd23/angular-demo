@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="col-md-4">
-    <form (ngSubmit)="onSubmit()" #mediaForm="ngForm" novalidate>
+    <form (ngSubmit)="onSubmit(); mediaForm.reset()" #mediaForm="ngForm" novalidate>
       <div class="form-group">
         <label for="name">Media Name</label>
         <input type="text" class="form-control" ngModel name="name" required #name="ngModel">
@@ -71,6 +71,16 @@
 
 
     </form>
+
+
+    <div *ngIf="responseText" class="alert alert-success">
+      {{responseText}}
+    </div>
+
+
+    
+
+
   </div>
 
   <div class="col-md-4">

@@ -30,9 +30,14 @@ export class MediaDetailsComponent extends OnInit {
     // })
     this.route.params.subscribe(
       (params : Params) =>{
-        this.mediaItem = this.mediaService.get().find(function(item){
-          return item['id'] == params['id'];
-        })
+        // this.mediaItem = this.mediaService.get().find(function(item){
+        //   return item['id'] == params['id'];
+        // })
+        this.mediaService.get(params['id']).subscribe(
+          responseItem => {
+            this.mediaItem = responseItem;
+          }
+        )
       }
     )
      
